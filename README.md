@@ -43,7 +43,7 @@ p9GIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxzfOSzx				password
 
 5. configuramos los accesos IAM  
 ```  
-user - 						group - 						policies  
+user - 					group - 					policies  
 tutorial02_user_upload  ->	tutorial02_group_s3_upload ->	tutorial02_policies_s3_upload  
 ```  
 
