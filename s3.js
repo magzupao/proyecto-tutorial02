@@ -14,10 +14,21 @@ const client = new S3Client({
 export async function uploadFile(file){
     const stream = createReadStream(file.inputFile.tempFilePath)
     console.log(AWS_PUBLIC_KEY, AWS_SECRET_KEY)
-    const uploadParams = {
-        Bucket: AWS_BUCKET_NAME,
-        Key: file.inputFile.name,
-        Body: stream
+    let imageType = file.inputFile.mimetype
+    let uploadParams = '';
+    if(imageType.indexOf('image') > -1){
+        uploadParams = {
+            Bucket: AWS_BUCKET_NAME,
+            Key:  'images/' + file.inputFile.name,
+            Body: stream
+        }
+    }
+    if(imageType.indexOf('officedocument') > -1){
+        uploadParams = {
+            Bucket: AWS_BUCKET_NAME,
+            Key:  'documents/' + file.inputFile.name,
+            Body: stream
+        }
     }
     const command = new PutObjectCommand(uploadParams)
     return await client.send(command)
