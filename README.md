@@ -1,10 +1,9 @@
 # proyecto-tutorial02
 Subir archivos a AWS S3 usando NodeJs
 
-Este ejemplo ha replicado lo que esta publicado en:  
+Este ejemplo ha seguido lo publicado en:  
 
 https://www.youtube.com/watch?v=sDVRyFaoI8s&t=222s
-https://github.com/FaztTech/nodejs-s3-example
 
 1. creamos el bucket
 
